@@ -288,7 +288,7 @@ class MaskProcessor:
             
             # Compute the proportion of foreground pixels
             total_pixels = mask_pixels.size
-            foreground_pixels = np.count_nonzero(mask_pixels > 0)
+            foreground_pixels = np.sum(mask_pixels>127)
             foreground_ratio = foreground_pixels / total_pixels
 
             # Determine if the superpixel is part of the foreground (1) or background (0)
