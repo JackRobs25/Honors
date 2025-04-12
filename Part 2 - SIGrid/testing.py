@@ -409,75 +409,104 @@ if __name__ == "__main__":
 
     # fixed_ns = [66, 57, 53, 33, 76, 69, 63, 42]
 
-    # a1 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=3, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
-    # a2 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=3, dim=63, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    a = Experiment(dataset='CUB', n_segments=300, compactness=5, SIGrid_channels=3, dim=66, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    b = Experiment(dataset='CUB', n_segments=300, compactness=10, SIGrid_channels=3, dim=57, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    c = Experiment(dataset='CUB', n_segments=300, compactness=20, SIGrid_channels=3, dim=53, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    d = Experiment(dataset='CUB', n_segments=300, compactness=100, SIGrid_channels=3, dim=33, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    e = Experiment(dataset='CUB', n_segments=500, compactness=5, SIGrid_channels=3, dim=76, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    f = Experiment(dataset='CUB', n_segments=500, compactness=10, SIGrid_channels=3, dim=69, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    g = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=3, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    h = Experiment(dataset='CUB', n_segments=500, compactness=100, SIGrid_channels=3, dim=42, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
 
-    # a3 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=16, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=True, height=True, compac=True, solidity=True, eccentricity=True, hu=True)
-    # a4 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=16, dim=63, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=True, height=True, compac=True, solidity=True, eccentricity=True, hu=True)
+    a.run_experiment()
+    a.save_data()
+    b.run_experiment()
+    b.save_data()
+    c.run_experiment()
+    c.save_data()
+    d.run_experiment()
+    d.save_data()
+    e.run_experiment()
+    e.save_data()
+    f.run_experiment()
+    f.save_data()
+    g.run_experiment()
+    g.save_data()
+    h.run_experiment()
+    h.save_data()
 
-    # b1 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=6, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=True, height=True, compac=False, solidity=False, eccentricity=False, hu=False)
-    # b2 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=6, dim=63, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=True, height=True, compac=False, solidity=False, eccentricity=False, hu=False)
+    ################################################################################################################ - after determining best hyperparams
 
-    # c1 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=10, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=True)
-    # c2 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=10, dim=63, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=True)
+    # e2 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=3, dim=, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    
+    # a1 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=4, dim=, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    # a2 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=4, dim=, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
 
-    a1 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=4, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=1, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
-    a2 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=4, dim=63, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=False)
+    # b1 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=5, dim=, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=True, height=True, compac=False, solidity=False, eccentricity=False, hu=False)
+    # b2 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=5, dim=, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=True, height=True, compac=False, solidity=False, eccentricity=False, hu=False)
 
-    a3 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=5, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=True, height=True, compac=False, solidity=False, eccentricity=False, hu=False)
-    a4 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=5, dim=63, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=True, height=True, compac=False, solidity=False, eccentricity=False, hu=False)
+    # c1 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=6, dim=, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=True, solidity=True, eccentricity=True, hu=False)
+    # c2 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=6, dim=, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=True, solidity=True, eccentricity=True, hu=False)
 
-    b1 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=6, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=True, solidity=True, eccentricity=True, hu=False)
-    b2 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=6, dim=63, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=True, solidity=True, eccentricity=True, hu=False)
+    # f1 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=6, dim=, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=True, height=True, compac=False, solidity=False, eccentricity=False, hu=False)
+    # f2 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=6, dim=, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=True, height=True, compac=False, solidity=False, eccentricity=False, hu=False)
 
-    c1 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=7, dim=63, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=False,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=True)
-    c2 = Experiment(dataset='CUB', n_segments=500, compactness=20, SIGrid_channels=7, dim=63, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=False,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=True)
+    # d1 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=7, dim=, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=False,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=True)
+    # d2 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=7, dim=, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=False,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=True)
 
+    # g1 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=10, dim=, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=True)
+    # g2 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=10, dim=, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=False, width=False, height=False, compac=False, solidity=False, eccentricity=False, hu=True)
 
+    # h1 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=16, dim=, reduced_performance=True, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=True, height=True, compac=True, solidity=True, eccentricity=True, hu=True)
+    # h2 = Experiment(dataset='CUB', n_segments=, compactness=, SIGrid_channels=16, dim=, reduced_performance=False, learning_rate=1e-3, num_epochs=50, batch_size=16, device=DEVICE, avg_color=True,  area=True, width=True, height=True, compac=True, solidity=True, eccentricity=True, hu=True)
+
+    # e2.run_experiment()
+    # e2.save_data()
 
     # a1.run_experiment()
     # a1.save_data()
-    a1.run_experiment()
-    a1.save_data()
-    # a3.run_experiment()
-    # a3.save_data()
-    # b1.run_experiment()
-    # b1.save_data()
-    # c1.run_experiment()
-    # c1.save_data()
-    
 
     # a2.run_experiment()
     # a2.save_data()
-    # a4.run_experiment()
-    # a4.save_data()
+
+    # b1.run_experiment()
+    # b1.save_data()
+
     # b2.run_experiment()
     # b2.save_data()
+
+    # c1.run_experiment()
+    # c1.save_data()
+
     # c2.run_experiment()
     # c2.save_data()
+
+    # f1.run_experiment()
+    # f1.save_data()
+
+    # f2.run_experiment()
+    # f2.save_data()
+
+    # d1.run_experiment()
+    # d1.save_data()
+
     # d2.run_experiment()
     # d2.save_data()
-    # e2.run_experiment()
-    # e2.save_data()
-    
+
+    # g1.run_experiment()
+    # g1.save_data()
+
+    # g2.run_experiment()
+    # g2.save_data()
+
+    # h1.run_experiment()
+    # h1.save_data()
+
+    # h2.run_experiment()
+    # h2.save_data()
+
+
+
 
     
-    
-
-    # test_300_10_3.run_experiment()
-    # test_300_10_3.save_data()
-    # test_300_10_6.run_experiment()
-    # test_300_10_6.save_data()
-    # test_300_10_9.run_experiment()
-    # test_300_10_9.save_data()
-    # test_500_10_3.run_experiment()
-    # test_500_10_3.save_data()
-    # test_500_10_6.run_experiment()
-    # test_500_10_6.save_data()
-    # test_500_10_9.run_experiment()
-    # test_500_10_9.save_data()
-    # reg_test_300_10_3.run_experiment()
-    # reg_test_300_10_3.save_data()
-    # test_300_10_3_100.run_experiment()
-    # test_300_10_3_100.save_data()
     
