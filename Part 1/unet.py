@@ -63,6 +63,9 @@ class UNet(nn.Module):
         else:
             into = 1
 
+        self.fusionconv1 = nn.Conv2d(into, self.n, kernel_size=3, padding=1)
+        self.fusionconv2 = nn.Conv2d(self.n, self.n, kernel_size=3, padding=1)
+
         if self.normal_UNET:
             if self.remember:
                 self.e11 = nn.Conv2d(9, 64, kernel_size=3, padding=1) # output: 570x570x64
@@ -163,8 +166,6 @@ class UNet(nn.Module):
                 self.outconv = nn.Conv2d(64, 1, kernel_size=1)
 
         else:
-            self.fusionconv1 = nn.Conv2d(into, self.n, kernel_size=3, padding=1)
-            self.fusionconv2 = nn.Conv2d(self.n, self.n, kernel_size=3, padding=1)
             
             self.e11 = nn.Conv2d(self.input_channels, self.n, kernel_size=3, padding=1)
             self.e12 = nn.Conv2d(self.n, self.n, kernel_size=3, padding=1)
@@ -195,6 +196,15 @@ class UNet(nn.Module):
             # Encoder
             xe11 = F.relu(self.e11(x))
             xe12 = F.relu(self.e12(xe11))
+
+            if self.fusionAdd:
+                # pass sp_tensor through convolution
+                f_sp = F.relu(self.fusionconv2(F.relu(self.fusionconv1(sp_tensor))))
+                xe12 = xe12 + f_sp
+            elif self.fusionCat:
+                f_sp = F.relu(self.fusionconv2(F.relu(self.fusionconv1(sp_tensor))))
+                xe12 = torch.cat((xe12, f_sp), dim=1) 
+
             xp1 = self.pool1(xe12)
 
             if self.remember:
