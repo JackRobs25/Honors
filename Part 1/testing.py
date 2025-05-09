@@ -318,11 +318,11 @@ if __name__ == "__main__":
     ) 
 
     UNET_OH_REMEMBER = Experiment(
-        normal_UNET=True, dataset='CUB', avg=False, sp=True, greyscale=False, n=16, k=6, fair=False, compareOH=False, compareAvg=False, fusionAdd=False, fusionCat=False, remember=True, learning_rate=1e-4, num_epochs=1, batch_size=16, device='mps' if torch.backends.mps.is_available() else 'cpu'
+        normal_UNET=True, dataset='CUB', avg=False, sp=True, greyscale=False, n=16, k=6, fair=False, compareOH=False, compareAvg=False, fusionAdd=False, fusionCat=True, remember=False, learning_rate=1e-4, num_epochs=1, batch_size=16, device='mps' if torch.backends.mps.is_available() else 'cpu'
     )
 
     UNET_OH_REMEMBER.run_experiment()
-    UNET_OH_REMEMBER.save_data()
+    # UNET_OH_REMEMBER.save_data()
     
     # UNET.run_experiment()
     # UNET.save_data()
